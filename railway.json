@@ -1,7 +1,7 @@
 {
   "build": {
     "nixpacksPlan": {
-      "providers": ["php", "composer", "node"]
+      "providers": ["php", "node"]
     }
   }
 }
