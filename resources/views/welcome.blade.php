@@ -264,37 +264,105 @@
         </nav>
       </div>
     </header>
-    <!-- Hero Section -->
+   <!-- Hero Section -->
 <section
   id="home"
-  class="hero-section min-h-screen flex items-center pt-16 "
+  class="relative min-h-screen flex items-center justify-start pt-16 overflow-hidden"
 >
-  <div class="container mx-auto px-4 py-20">
-    <div class="max-w-2xl">
-      <h1
-        class="text-4xl md:text-6xl lg:text-6xl font-bold text-white mb-6 whitespace-nowrap"
-      >
-        YOUR  <br>
+  <!-- Background Container -->
+  <div
+    id="hero-bg"
+    class="absolute inset-0 bg-cover bg-center transition-all duration-700"
+    style="background-image: url('/images/bg1.jpg');"
+  ></div>
+
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(
+      to right,
+      rgba(120, 45, 60, 0.65),
+      rgba(255, 192, 203, 0.25)
+    );"
+  ></div>
+
+  <!-- Navigation Buttons -->
+<button
+  id="prev-bg"
+  class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-primary rounded-full p-2 shadow hover:bg-primary hover:text-white transition z-20"
+  aria-label="Previous Background"
+>
+  <i class="ri-arrow-left-s-line text-2xl"></i>
+</button>
+
+<button
+  id="next-bg"
+  class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-primary rounded-full p-2 shadow hover:bg-primary hover:text-white transition z-20"
+  aria-label="Next Background"
+>
+  <i class="ri-arrow-right-s-line text-2xl"></i>
+</button>
+
+  <!-- Content -->
+  <div class="container relative z-10 mx-auto px-4 py-20">
+    <div class="max-w-2xl text-left">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        YOUR <br />
         PRODUCTIVE SISTER
       </h1>
-      <p class="text-xl text-white opacity-90 mb-8">
+      <p class="text-lg md:text-xl text-white mb-8">
         Good Habit inside Productive Muslimah
       </p>
-      <div class="flex flex-wrap gap-4 md:justify-start justify-center">
+      <div class="flex space-x-4">
         <a
           href="#join"
-            class="bg-primary text-white px-8 py-3 !rounded-button font-semibold whitespace-nowrap transition-all hover:bg-secondary hover:scale-105 hover:shadow-lg text-center block md:inline-block"
-          >Join Now</a
+          class="bg-[#3C1111] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#5b2020] transition"
         >
+          Join Now
+        </a>
         <a
           href="#classes"
-          class="bg-transparent border-2 border-white text-white px-8 py-3 !rounded-button hover:bg-white hover:bg-opacity-10 transition-all whitespace-nowrap"
-          >Explore Classes</a
+          class="border border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-black transition"
         >
+          Explore Classes
+        </a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- JavaScript for Background Navigation -->
+<script>
+  const bgImages = [
+    "/images/bg.jpg",
+    "/images/bg1.png",
+  ];
+
+  let currentBg = 0;
+  const bgDiv = document.getElementById("hero-bg");
+
+  function setBackground() {
+    if (bgDiv) {
+      bgDiv.style.backgroundImage = `url('${bgImages[currentBg]}')`;
+    }
+  }
+
+  // Initial background load
+  setBackground();
+
+  // Event Listeners
+  document.getElementById("prev-bg")?.addEventListener("click", () => {
+    currentBg = (currentBg - 1 + bgImages.length) % bgImages.length;
+    setBackground();
+  });
+
+  document.getElementById("next-bg")?.addEventListener("click", () => {
+    currentBg = (currentBg + 1) % bgImages.length;
+    setBackground();
+  });
+</script>
+
+
     <!-- About Section -->
 <section id="about" class="py-20 bg-white">
   <div class="container mx-auto px-4">
@@ -1251,7 +1319,7 @@ const classSchedules = {
     <div id="facility-slider" class="relative max-w-4xl mx-auto aspect-[16/9] overflow-hidden rounded-2xl shadow-lg group">
       <!-- Image Track -->
       <div class="flex transition-transform duration-700 ease-in-out h-full w-full">
-        <img src="{{ asset('images/IMG_0278.png') }}" alt="Facility 5"
+        <img src="{{ asset('images/bg1.png') }}" alt="Facility 5"
           class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
         <img src="{{ asset('images/muaythai.png') }}" alt="Facility 1"
           class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
@@ -1274,16 +1342,7 @@ const classSchedules = {
       </div>
       </div>
 
-      <!-- Prev/Next Buttons -->
-      <button type="button" onclick="prevFacility()"
-        class="absolute left-2 top-1/2 -translate-y-1/2 bg-white text-primary rounded-full p-2 shadow hover:bg-primary hover:text-white transition z-10">
-        <i class="ri-arrow-left-s-line text-2xl"></i>
-      </button>
-      <button type="button" onclick="nextFacility()"
-        class="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-primary rounded-full p-2 shadow hover:bg-primary hover:text-white transition z-10">
-        <i class="ri-arrow-right-s-line text-2xl"></i>
-      </button>
-    </div>
+      
 
     <!-- Indicator -->
       <div class="text-center mt-6">
@@ -1299,7 +1358,7 @@ const classSchedules = {
 <!-- JavaScript Slider Logic -->
 <script>
   const images = [
-  "{{ asset('images/IMG_0278.png') }}",
+  "{{ asset('images/bg1.png') }}",
   "{{ asset('images/muaythai.png') }}",
   "{{ asset('images/revormer pilates.png') }}",
   "{{ asset('images/foto5.png') }}",
@@ -1846,4 +1905,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
   </body>
 </html>
-

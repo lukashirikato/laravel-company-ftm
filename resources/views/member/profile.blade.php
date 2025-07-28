@@ -386,44 +386,68 @@ function closeLogoutModal() {
         </nav>
       </div>
     </header>
-    <!-- Hero Section -->
+   <!-- Hero Section -->
+ <!-- Hero Section -->
 <section
   id="home"
-  class="hero-section min-h-screen flex items-center pt-16 "
+  class="relative min-h-screen flex items-center justify-start pt-16 overflow-hidden"
 >
-  <div class="container mx-auto px-4 py-20">
+  <!-- Background Container -->
+  <div
+    id="hero-bg"
+    class="absolute inset-0 bg-cover bg-center transition-all duration-700"
+    style="background-image: url('/images/bg1.png');"
+  ></div>
+
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(
+      to right,
+      rgba(120, 45, 60, 0.65),
+      rgba(255, 192, 203, 0.25)
+    );"
+  ></div>
+
+  <div class="container mx-auto px-4 py-20 relative z-10">
     <div class="max-w-2xl">
       <h1
-        class="text-4xl md:text-6xl lg:text-6xl font-bold text-white mb-6 whitespace-nowrap"
+        class="text-4xl md:text-6xl lg:text-6xl font-bold text-white mb-6"
       >
-        YOUR  <br>
+        YOUR <br />
         PRODUCTIVE SISTER
       </h1>
       <p class="text-xl text-white opacity-90 mb-8">
         Good Habit inside Productive Muslimah
       </p>
       <div class="flex flex-wrap gap-4 md:justify-start justify-center">
-@auth('customer')
-    <a
-      href="#member-program"
-      class="bg-primary text-white px-8 py-3 !rounded-button font-semibold whitespace-nowrap transition-all hover:bg-secondary hover:scale-105 hover:shadow-lg text-center block md:inline-block"
-    >Lihat Program Saya </a>
-@else
-    <a
-      href="#join"
-      class="bg-primary text-white px-8 py-3 !rounded-button font-semibold whitespace-nowrap transition-all hover:bg-secondary hover:scale-105 hover:shadow-lg text-center block md:inline-block"
-    >Join Now</a>
-@endauth
-        
+        @auth('customer')
+          <a
+            href="#member-program"
+            class="bg-primary text-white px-8 py-3 !rounded-button font-semibold whitespace-nowrap transition-all hover:bg-secondary hover:scale-105 hover:shadow-lg text-center block md:inline-block"
+          >
+            Lihat Program Saya
+          </a>
+        @else
+          <a
+            href="#join"
+            class="bg-primary text-white px-8 py-3 !rounded-button font-semibold whitespace-nowrap transition-all hover:bg-secondary hover:scale-105 hover:shadow-lg text-center block md:inline-block"
+          >
+            Join Now
+          </a>
+        @endauth
+
         <a
           href="#schedule"
           class="bg-transparent border-2 border-white text-white px-8 py-3 !rounded-button hover:bg-white hover:bg-opacity-10 transition-all whitespace-nowrap"
-          >My schedule</a
         >
+          My Schedule
+        </a>
       </div>
     </div>
   </div>
 </section>
+
 
 @auth('customer')
 <section id="member-program" class="py-16 bg-gradient-to-br from-[#fff] to-[#f3f4f6] font-sans">
@@ -1174,7 +1198,7 @@ function closeLogoutModal() {
       <!-- Class Card Example -->
       <div class="bg-white rounded-lg shadow-md overflow-hidden transition hover:shadow-xl duration-300 flex flex-col">
         <div class="relative h-48">
-          <img src="{{ asset('images/muaythai.JPG') }}" class="w-full h-full object-cover" />
+           <img src="{{ asset('images\muaythai.png') }}" class="w-full h-full object-cover" />
           <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">Popular</div>
         </div>
         <div class="p-5 flex-1 flex flex-col">
@@ -1192,7 +1216,7 @@ function closeLogoutModal() {
 
       <div class="bg-white rounded-lg shadow-md overflow-hidden transition hover:shadow-xl duration-300 flex flex-col">
         <div class="relative h-48">
-          <img src="{{ asset('images/body shaping.JPG') }}" class="w-full h-full object-cover" />
+           <img src="{{ asset('images\Body Shaping.png') }}" class="w-full h-full object-cover" />
         </div>
         <div class="p-5 flex-1 flex flex-col">
           <h3 class="text-xl font-semibold text-primary mb-2">Body Shaping</h3>
@@ -1209,7 +1233,7 @@ function closeLogoutModal() {
 
       <div class="bg-white rounded-lg shadow-md overflow-hidden transition hover:shadow-xl duration-300 flex flex-col">
         <div class="relative h-48">
-          <img src="{{ asset('images/mat pilates.JPG') }}" class="w-full h-full object-cover" />
+          <img src="{{ asset('images\mat pilates.png') }}" class="w-full h-full object-cover" />
         </div>
         <div class="p-5 flex-1 flex flex-col">
           <h3 class="text-xl font-semibold text-primary mb-2">Mat Pilates</h3>
@@ -1226,7 +1250,7 @@ function closeLogoutModal() {
 
       <div class="bg-white rounded-lg shadow-md overflow-hidden transition hover:shadow-xl duration-300 flex flex-col">
         <div class="relative h-48">
-          <img src="{{ asset('images/revormer pilates.jpeg') }}" class="w-full h-full object-cover" />
+           <img src="{{ asset('images\Revormer Pilates.png') }}" class="w-full h-full object-cover" />
           <div class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded">Popular</div>
         </div>
         <div class="p-5 flex-1 flex flex-col">
@@ -1461,33 +1485,33 @@ function closeModal() {
     </div>
 
     <!-- Slider Wrapper -->
-    <div class="relative max-w-4xl mx-auto aspect-[16/9] overflow-hidden rounded-2xl shadow-lg group">
+    <div id="facility-slider" class="relative max-w-4xl mx-auto aspect-[16/9] overflow-hidden rounded-2xl shadow-lg group">
       <!-- Image Track -->
-      <div id="facility-slider" class="overflow-hidden w-full h-full">
-        <div class="flex transition-transform duration-700 ease-in-out h-full w-full">
-          <img src="{{ asset('images/muaythai.JPG') }}" alt="Facility 1"
-            class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-          <img src="{{ asset('images/body shaping.JPG') }}" alt="Facility 2"
-            class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-          <img src="{{ asset('images\revormer pilates.jpeg') }}" alt="Facility 3"
-            class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-          <img src="{{ asset('images/mat pilates.JPG') }}" alt="Facility 4"
-            class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-          <img src="{{ asset('images\IMG_0278.jpg') }}" alt="Facility 5"
-            class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-        </div>
+      <div class="flex transition-transform duration-700 ease-in-out h-full w-full">
+        <img src="{{ asset('images/bg1.png') }}" alt="Facility 5"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+        <img src="{{ asset('images/muaythai.png') }}" alt="Facility 1"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+        <img src="{{ asset('images/revormer pilates.png') }}" alt="Facility 3"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+         <img src="{{ asset('images/foto5.png') }}" alt="Facility 9"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+        <img src="{{ asset('images/mat pilates.png') }}" alt="Facility 4"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+        <img src="{{ asset('images/body shaping.png') }}" alt="Facility 2"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+        <img src="{{ asset('images/foto1.png') }}" alt="Facility 6"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+        <img src="{{ asset('images/foto2.png') }}" alt="Facility 7"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+        <img src="{{ asset('images/foto3.png') }}" alt="Facility 8"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+        <img src="{{ asset('images/foto4.png') }}" alt="Facility 9"
+          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+      </div>
       </div>
 
-      <!-- Prev/Next Buttons -->
-      <button type="button" onclick="prevFacility()"
-        class="absolute left-2 top-1/2 -translate-y-1/2 bg-white text-primary rounded-full p-2 shadow hover:bg-primary hover:text-white transition z-10">
-        <i class="ri-arrow-left-s-line text-2xl"></i>
-      </button>
-      <button type="button" onclick="nextFacility()"
-        class="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-primary rounded-full p-2 shadow hover:bg-primary hover:text-white transition z-10">
-        <i class="ri-arrow-right-s-line text-2xl"></i>
-      </button>
-    </div>
+     
 
     <!-- Indicator -->
       <div class="text-center mt-6">
@@ -1503,12 +1527,17 @@ function closeModal() {
 <!-- JavaScript Slider Logic -->
 <script>
   const images = [
-    "{{ asset('images/muaythai.JPG') }}",
-    "{{ asset('images/body shaping.JPG') }}",
-    "{{ asset('images/revormer pilates.JPG') }}",
-    "{{ asset('images/mat pilates.JPG') }}",
-    "{{ asset('gallery/facility5.jpg') }}"
-  ];
+  "{{ asset('images/bg1.png') }}",
+  "{{ asset('images/muaythai.png') }}",
+  "{{ asset('images/revormer pilates.png') }}",
+  "{{ asset('images/foto5.png') }}",
+  "{{ asset('images/mat pilates.png') }}",
+  "{{ asset('images/body shaping.png') }}",
+  "{{ asset('images/foto1.png') }}",
+  "{{ asset('images/foto2.ppg') }}",
+  "{{ asset('images/foto3.png') }}",
+  "{{ asset('images/foto4.png') }}"
+];
   let current = 0;
   let autoSlide;
 
@@ -1540,6 +1569,7 @@ function closeModal() {
     autoSlide = setInterval(nextFacility, 4000);
   });
 </script>
+
 
   <!-- Partner logo -->
 <div class="text-center mb-16">
