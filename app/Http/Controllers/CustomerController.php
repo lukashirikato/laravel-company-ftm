@@ -119,9 +119,7 @@ public function index()
     ]);
 
     // Tambahkan user_id jika kolom tersedia dan user login
-    if (Schema::hasColumn('customers', 'user_id') && auth()->check()) {
-        $validated['user_id'] = auth()->id();
-    }
+    
 
     // Simpan ke database
     Customer::create($validated);
