@@ -1402,22 +1402,24 @@ const classSchedules = {
   });
 </script>
 
-  <!-- Partner logo -->
-<div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-primary mb-4">Partner</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">Supported by Trusted Partners Committed to a Healthy Lifestyle.</p>
-      <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
-    </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center">
-      <img src="icons/partner 2..png" alt="Partner 1" class="mx-auto h-20 transition-all duration-300">
-      <img src="icons/partner 3..png" alt="Partner 2" class="mx-auto h-20 transition-all duration-300">
-      <img src="icons/partner 4..png" alt="Partner 3" class="mx-auto h-20 transition-all duration-300">
-      <img src="icons/partner 5..png" alt="Partner 4" class="mx-auto h-20 transition-all duration-300">
-      <img src="icons/partner 6..png" alt="Partner 5" class="mx-auto h-20 transition-all duration-300">
-      <img src="icons/partner 1..png" alt="Partner 6" class="mx-auto h-20 transition-all duration-300">
-    </div>
+ <!-- Partner Section -->
+<section id="partner" class="py-20 bg-white">
+  <div class="text-center mb-16">
+    <h2 class="text-4xl font-bold text-primary mb-4">Partner</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto">Supported by Trusted Partners Committed to a Healthy Lifestyle.</p>
+    <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center">
+    <img src="{{ asset('icons/partner1.png') }}" alt="Partner 1" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner2.png') }}" alt="Partner 2" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner3.png') }}" alt="Partner 3" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner4.png') }}" alt="Partner 4" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner5.png') }}" alt="Partner 5" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner6.png') }}" alt="Partner 6" class="mx-auto h-20 transition-all duration-300">
   </div>
 </section>
+
 
 
 

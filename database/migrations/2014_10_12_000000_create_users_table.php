@@ -7,23 +7,26 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable(); // Jika pakai relasi ke tabel users
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone_number')->nullable();
-            $table->string('program')->nullable();
-            $table->integer('quota')->default(0);
-            $table->string('membership')->nullable();
-            $table->string('password')->nullable();     // Untuk login member
-            $table->boolean('is_verified')->default(false);
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+
+            // Tambahan opsional:
+            $table->string('phone')->nullable();               // Nomor HP user
+            $table->string('role')->default('member');         // Role: member, admin, dsb
+            $table->boolean('is_admin')->default(false);       // Apakah admin
+            $table->boolean('is_approved')->default(false);    // Untuk approval oleh admin
+
+            $table->rememberToken();
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('users');
     }
 };

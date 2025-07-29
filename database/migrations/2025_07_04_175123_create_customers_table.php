@@ -10,14 +10,21 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone_number')->nullable();
+            $table->string('password')->nullable(); // jika login pakai tabel ini
+
+            // Info program & membership
             $table->string('program')->nullable();
             $table->integer('quota')->default(0);
             $table->string('membership')->nullable();
             $table->string('preferred_membership')->nullable();
-            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
+
+            // Status verifikasi admin
+            $table->boolean('is_verified')->default(false);
+
             $table->timestamps();
         });
     }

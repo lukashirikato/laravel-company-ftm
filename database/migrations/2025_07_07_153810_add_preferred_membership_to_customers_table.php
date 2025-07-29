@@ -3,26 +3,24 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
-return new class extends Migration
-{
-    /**
-     * Tambahkan kolom preferred_membership ke tabel customers.
-     */
+return new class extends Migration {
     public function up(): void
     {
-        Schema::table('customers', function (Blueprint $table) {
-            $table->string('preferred_membership')->nullable()->after('membership');
-        });
+        if (!Schema::hasColumn('customers', 'preferred_membership')) {
+            Schema::table('customers', function (Blueprint $table) {
+                $table->string('preferred_membership')->nullable()->after('membership');
+            });
+        }
     }
 
-    /**
-     * Hapus kolom preferred_membership dari tabel customers.
-     */
     public function down(): void
     {
-        Schema::table('customers', function (Blueprint $table) {
-            $table->dropColumn('preferred_membership');
-        });
+        if (Schema::hasColumn('customers', 'preferred_membership')) {
+            Schema::table('customers', function (Blueprint $table) {
+                $table->dropColumn('preferred_membership');
+            });
+        }
     }
 };
