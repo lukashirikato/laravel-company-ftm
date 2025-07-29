@@ -19,7 +19,8 @@ class AdminRegisterController extends Controller
     {
         // Jika sudah login, langsung ke dashboard
         if (Auth::check()) {
-            return redirect()->route('home');
+            return redirect()->route('admin.home');
+
         }
 
         try {
