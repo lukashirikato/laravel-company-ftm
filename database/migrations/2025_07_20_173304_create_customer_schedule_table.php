@@ -8,25 +8,27 @@ return new class extends Migration
 {
     /**
      * Jalankan migrasi.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('customer_schedule', function (Blueprint $table) {
-    $table->id();
-    $table->foreignId('customer_id')->constrained()->onDelete('cascade');
-    $table->foreignId('schedule_id')->constrained()->onDelete('cascade');
-    $table->timestamps();
-});
+        Schema::create('customer_schedules', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('customer_id')
+                  ->constrained('customers')
+                  ->onDelete('cascade');
+
+            $table->foreignId('schedule_id')
+                  ->constrained('schedules')
+                  ->onDelete('cascade');
+
+            $table->timestamps();
+        });
     }
 
     /**
      * Rollback migrasi.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('customer_schedules');
     }

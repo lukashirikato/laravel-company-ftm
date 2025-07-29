@@ -27,7 +27,7 @@ class Schedule extends Model
 
 public function customers()
 {
-    return $this->belongsToMany(Customer::class, 'customer_schedule')->withTimestamps();
+    return $this->belongsToMany(Customer::class, 'customer_schedules')->withTimestamps();
 }
 
 }
