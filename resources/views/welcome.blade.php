@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- favicon  -->
 <!-- filepath: resources/views/dashboard.blade.php -->
-<link rel="icon" type="image/png" href="{{ asset('icons/favicon.jpg') }}" />
+<link rel="icon" type="image/png" href="{{ asset('images/favicon.jpg') }}" />
     <!-- end favicon  -->
     <title>FTM SOCIETY - Muslimah-Only Gym</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
@@ -374,11 +374,7 @@
     </div>
     <div class="flex flex-col md:flex-row items-center gap-12">
       <div class="md:w-1/2 flex justify-center">
-        <img
-          src="./images/logo ftm (1).jpg"
-          alt="Muslim women exercising"
-          class="rounded-lg shadow-lg w-56 sm:w-72 md:w-full h-auto object-cover transition-all duration-300"
-        />
+       <img src="{{ asset('images/logo-ftm.jpg') }}" alt="Muslim women exercising" class="rounded-lg shadow-lg w-56 sm:w-72 md:w-full h-auto object-cover transition-all duration-300">
       </div>
       <div class="md:w-1/2">
         <h3 class="text-2xl font-semibold text-primary mb-4">
