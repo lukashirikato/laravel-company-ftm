@@ -66,12 +66,7 @@ public function index()
 {
     $schedules = Schedule::all();
 
-    $customers = Customer::select([
-        'id', 'user_id', 'name', 'email', 'phone_number', 'program', 'quota',
-        'membership', 'preferred_membership', 'birth_date', 'schedule', 'goals',
-        'kondisi_khusus', 'referensi', 'pengalaman', 'is_muslim', 'voucher_code',
-        'created_at', 'updated_at', 'is_verified'
-    ])->get()->map(function ($c) {
+    $customers = Customer::with('schedules')->get()->map(function ($c) {
         return [
             'id'                   => $c->id,
             'user_id'              => $c->user_id ?? '-',
@@ -83,8 +78,8 @@ public function index()
             'membership'           => $c->membership ?? '-',
             'preferred_membership' => $c->preferred_membership ?? 'Not sure',
             'birth_date'           => $c->birth_date ?? '-',
-            'age'                  => $c->birth_date ? \Carbon\Carbon::parse($c->birth_date)->age : '-', // hitung umur otomatis
-            'schedule'             => $c->schedule ?? '-',
+            'age'                  => $c->birth_date ? \Carbon\Carbon::parse($c->birth_date)->age : '-',
+            'schedule'             => $c->schedules->pluck('name')->implode(', '), // ambil dari relasi
             'goals'                => $c->goals ?? '-',
             'kondisi_khusus'       => $c->kondisi_khusus ?? '-',
             'referensi'            => $c->referensi ?? '-',
