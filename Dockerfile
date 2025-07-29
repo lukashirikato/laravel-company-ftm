@@ -18,8 +18,7 @@ WORKDIR /var/www/html
 # Install dependensi Laravel
 RUN composer install --no-dev --optimize-autoloader
 
-# Generate key Laravel
-RUN php artisan key:generate
+
 
 # Atur permission storage & cache
 RUN chown -R www-data:www-data storage bootstrap/cache
