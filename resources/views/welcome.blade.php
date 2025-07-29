@@ -1411,12 +1411,12 @@ const classSchedules = {
   </div>
 
   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center justify-center">
-    <img src="{{ asset('icons/partner 1..png') }}" alt="Partner 1" class="mx-auto h-20 transition-all duration-300">
-    <img src="{{ asset('icons/partner 2..png') }}" alt="Partner 2" class="mx-auto h-20 transition-all duration-300">
-    <img src="{{ asset('icons/partner 3..png') }}" alt="Partner 3" class="mx-auto h-20 transition-all duration-300">
-    <img src="{{ asset('icons/partner 4..png') }}" alt="Partner 4" class="mx-auto h-20 transition-all duration-300">
-    <img src="{{ asset('icons/partner 5..png') }}" alt="Partner 5" class="mx-auto h-20 transition-all duration-300">
-    <img src="{{ asset('icons/partner 6..png') }}" alt="Partner 6" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner 1.png') }}" alt="Partner 1" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner 2.png') }}" alt="Partner 2" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner 3.png') }}" alt="Partner 3" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner 4.png') }}" alt="Partner 4" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner 5.png') }}" alt="Partner 5" class="mx-auto h-20 transition-all duration-300">
+    <img src="{{ asset('icons/partner 6.png') }}" alt="Partner 6" class="mx-auto h-20 transition-all duration-300">
   </div>
 </section>
 
