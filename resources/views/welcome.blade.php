@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- favicon  -->
 <!-- filepath: resources/views/dashboard.blade.php -->
-<link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
+<link rel="icon" type="image/x-icon" href="https://laravel-company-ftm-production.up.railway.app/images/favicon.ico">
     <!-- end favicon  -->
+    
     <title>FTM SOCIETY - Muslimah-Only Gym</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     
