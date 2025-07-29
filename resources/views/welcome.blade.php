@@ -1319,27 +1319,28 @@ const classSchedules = {
     <div id="facility-slider" class="relative max-w-4xl mx-auto aspect-[16/9] overflow-hidden rounded-2xl shadow-lg group">
       <!-- Image Track -->
       <div class="flex transition-transform duration-700 ease-in-out h-full w-full">
-        <img src="{{ asset('images/bg1.png') }}" alt="Facility 5"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-        <img src="{{ asset('images/muaythai.png') }}" alt="Facility 1"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-        <img src="{{ asset('images/revormer pilates.png') }}" alt="Facility 3"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-         <img src="{{ asset('images/foto5.png') }}" alt="Facility 9"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-        <img src="{{ asset('images/mat pilates.png') }}" alt="Facility 4"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-        <img src="{{ asset('images/body shaping.png') }}" alt="Facility 2"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-        <img src="{{ asset('images/foto1.png') }}" alt="Facility 6"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-        <img src="{{ asset('images/foto2.png') }}" alt="Facility 7"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-        <img src="{{ asset('images/foto3.png') }}" alt="Facility 8"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-        <img src="{{ asset('images/foto4.png') }}" alt="Facility 9"
-          class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
-      </div>
+  <img src="images/bg1.png" alt="Facility 5"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+  <img src="images/muaythai.png" alt="Facility 1"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+  <img src="images/revormer pilates.png" alt="Facility 3"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+  <img src="images/foto5.png" alt="Facility 9"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+  <img src="images/mat pilates.png" alt="Facility 4"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+  <img src="images/body shaping.png" alt="Facility 2"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+  <img src="images/foto1.png" alt="Facility 6"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+  <img src="images/foto2.png" alt="Facility 7"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+  <img src="images/foto3.png" alt="Facility 8"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+  <img src="images/foto4.png" alt="Facility 9"
+    class="w-full h-full object-cover flex-shrink-0 transition duration-500 group-hover:scale-105" />
+</div>
+
       </div>
 
       
