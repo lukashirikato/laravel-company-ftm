@@ -176,9 +176,8 @@ public function update(Request $request, $id)
         'schedule_time' => 'nullable|array',
     ]);
 
-    if (Schema::hasColumn('customers', 'user_id') && auth()->check()) {
-        $validated['user_id'] = auth()->id();
-    }
+    // $validated['user_id'] = auth()->id(); // Sementara di-nonaktifkan untuk cegah foreign key error
+
 
     $customer->update($validated);
     $customer->schedules()->sync($request->input('schedule_ids', []));
