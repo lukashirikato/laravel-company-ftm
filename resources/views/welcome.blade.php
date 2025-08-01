@@ -364,57 +364,68 @@
 </script>
 
 
-    <!-- About Section -->
+   <!-- About Section -->
 <section id="about" class="py-20 bg-white">
   <div class="container mx-auto px-4">
+    <!-- Judul -->
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
         About FTM
       </h2>
       <div class="w-24 h-1 bg-secondary mx-auto"></div>
     </div>
+
+    <!-- Konten Utama -->
     <div class="flex flex-col md:flex-row items-center gap-12">
+      <!-- Gambar -->
       <div class="md:w-1/2 flex justify-center">
-       <img src="{{ asset('images/logo-ftm.jpg') }}" alt="Muslim women exercising" class="rounded-lg shadow-lg w-56 sm:w-72 md:w-full h-auto object-cover transition-all duration-300">
+        <img src="{{ asset('images/logo-ftm.jpg') }}" alt="Muslim women exercising"
+          class="rounded-lg shadow-lg w-56 sm:w-72 md:w-full h-auto object-cover transition-all duration-300">
       </div>
-      <div class="md:w-1/2">
-        <h3 class="text-2xl font-semibold text-primary mb-4">
+
+      <!-- Teks dan Ikon -->
+      <div class="md:w-1/2 flex flex-col items-center md:items-start">
+        <!-- Judul Section -->
+        <h3 class="text-2xl font-semibold text-primary mb-4 text-center md:text-left">
           Vision And Mision 
         </h3>
-        <p class="text-gray-700 mb-6">
-          FTM society adalah memberikan ruang bagi para muslimah untuk memiliki gaya hidup aktif dan produktif yang sesuai dengan syariat Islam.Oleh karena itu, FTM Society hadir menyelenggarakan kegiatan olahraga dan kegiatan aktif sosial lainnya, seperti webinar dan event.
+
+        <!-- Deskripsi -->
+        <p class="text-gray-700 mb-6 text-center md:text-left">
+          FTM society adalah memberikan ruang bagi para muslimah untuk memiliki gaya hidup aktif dan produktif yang sesuai dengan syariat Islam. Oleh karena itu, FTM Society hadir menyelenggarakan kegiatan olahraga dan kegiatan aktif sosial lainnya, seperti webinar dan event.
         </p>
-        <div class="flex gap-8 items-center mt-8">
-  <!-- Muslimah Only -->
-  <div class="flex items-center gap-2">
-    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-pink-100 text-pink-600">
-      <i class="ri-shield-check-line ri-lg"></i>
-    </div>
-    <span class="font-medium text-gray-800">Muslimah Only</span>
-  </div>
 
-  <!-- Certified Trainers -->
-  <div class="flex items-center gap-2">
-    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-pink-100 text-pink-600">
-      <i class="ri-heart-pulse-line ri-lg"></i>
-    </div>
-    <span class="font-medium text-gray-800">Certified Trainers</span>
-  </div>
+        <!-- Fitur/Fakta -->
+        <div class="flex flex-wrap justify-center md:justify-start gap-8 items-center mt-8 text-center">
+          <!-- Muslimah Only -->
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-pink-100 text-pink-600">
+              <i class="ri-shield-check-line ri-lg"></i>
+            </div>
+            <span class="font-medium text-gray-800">Muslimah Only</span>
+          </div>
 
-  <!-- No Music & No Camera -->
-  <div class="flex items-center gap-2">
-    <div class="w-10 h-10 flex items-center justify-center rounded-full bg-pink-100 text-pink-600">
-      <i class="ri-pray-line ri-lg"></i>
-    </div>
-    <span class="font-medium text-gray-800">No Music & No Camera</span>
-  </div>
-</div>
+          <!-- Certified Trainers -->
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-pink-100 text-pink-600">
+              <i class="ri-heart-pulse-line ri-lg"></i>
+            </div>
+            <span class="font-medium text-gray-800">Certified Trainers</span>
+          </div>
 
+          <!-- No Music & No Camera -->
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 flex items-center justify-center rounded-full bg-pink-100 text-pink-600">
+              <i class="ri-pray-line ri-lg"></i>
+            </div>
+            <span class="font-medium text-gray-800">No Music & No Camera</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
     <!-- Features Section (Slider) -->
 <section class="py-20 bg-gray-50">
